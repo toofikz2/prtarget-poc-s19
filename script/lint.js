@@ -1,0 +1,1 @@
+if (require("fs").existsSync("FAIL_LINT")) { console.error("lint failed"); process.exit(1); } else { console.log("lint ok"); }
